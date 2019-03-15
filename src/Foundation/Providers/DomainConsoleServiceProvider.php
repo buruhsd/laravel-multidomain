@@ -1,11 +1,11 @@
-<?php namespace Gecche\Multidomain\Foundation;
+<?php namespace Aljawad\Multidomain\Foundation;
 
 use App;
-use Gecche\Multidomain\Foundation\Console\RemoveDomainCommand;
+use Aljawad\Multidomain\Foundation\Console\RemoveDomainCommand;
 use Illuminate\Support\ServiceProvider;
-use Gecche\Multidomain\Foundation\Console\DomainCommand;
-use Gecche\Multidomain\Foundation\Console\AddDomainCommand;
-use Gecche\Multidomain\Foundation\Console\UpdateEnvDomainCommand;
+use Aljawad\Multidomain\Foundation\Console\DomainCommand;
+use Aljawad\Multidomain\Foundation\Console\AddDomainCommand;
+use Aljawad\Multidomain\Foundation\Console\UpdateEnvDomainCommand;
 
 class DomainConsoleServiceProvider extends ServiceProvider {
 
@@ -32,7 +32,7 @@ class DomainConsoleServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app->alias('artisan',\Gecche\Multidomain\Console\Application::class);
+        $this->app->alias('artisan',\Aljawad\Multidomain\Console\Application::class);
 
 
         foreach ($this->commands as $command)

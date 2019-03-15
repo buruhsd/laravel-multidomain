@@ -1,6 +1,6 @@
 <?php
 
-namespace Gecche\Multidomain\Foundation;
+namespace Aljawad\Multidomain\Foundation;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Cookie;

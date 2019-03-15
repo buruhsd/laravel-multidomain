@@ -1,4 +1,4 @@
-<?php namespace Gecche\Multidomain\Queue;
+<?php namespace Aljawad\Multidomain\Queue;
 
 use Illuminate\Queue\ListenerOptions;
 use Illuminate\Support\ProcessUtils;
@@ -50,7 +50,7 @@ class Listener extends \Illuminate\Queue\Listener{
      * Add the domain option to the given command.
      *
      * @param  string  $command
-     * @param  \Gecche\Multidomain\Queue\ListenerOptions  $options
+     * @param  \Aljawad\Multidomain\Queue\ListenerOptions  $options
      * @return string
      */
     protected function addDomain($command, ListenerOptions $options)

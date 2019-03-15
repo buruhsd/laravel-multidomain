@@ -1,6 +1,6 @@
-<?php namespace Gecche\Multidomain\Queue;
+<?php namespace Aljawad\Multidomain\Queue;
 
-use Gecche\Multidomain\Queue\Console\ListenCommand as QueueListenCommand;
+use Aljawad\Multidomain\Queue\Console\ListenCommand as QueueListenCommand;
 
 class QueueServiceProvider extends \Illuminate\Queue\QueueServiceProvider {
 

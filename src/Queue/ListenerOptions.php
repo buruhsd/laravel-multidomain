@@ -1,6 +1,6 @@
 <?php
 
-namespace Gecche\Multidomain\Queue;
+namespace Aljawad\Multidomain\Queue;
 
 class ListenerOptions extends \Illuminate\Queue\ListenerOptions
 {

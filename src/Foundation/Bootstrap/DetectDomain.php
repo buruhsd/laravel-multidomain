@@ -1,4 +1,4 @@
-<?php namespace Gecche\Multidomain\Foundation\Bootstrap;
+<?php namespace Aljawad\Multidomain\Foundation\Bootstrap;
 
 use Illuminate\Contracts\Foundation\Application;
 

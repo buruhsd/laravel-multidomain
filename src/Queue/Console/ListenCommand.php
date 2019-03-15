@@ -1,9 +1,9 @@
 <?php
 
-namespace Gecche\Multidomain\Queue\Console;
+namespace Aljawad\Multidomain\Queue\Console;
 
 
-use Gecche\Multidomain\Queue\ListenerOptions;
+use Aljawad\Multidomain\Queue\ListenerOptions;
 
 class ListenCommand extends \Illuminate\Queue\Console\ListenCommand
 {

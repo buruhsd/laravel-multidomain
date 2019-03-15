@@ -41,7 +41,7 @@ the `app.php` file in the `bootstrap` folder.
 
 ```php
 //$app = new Illuminate\Foundation\Application(
-$app = new Gecche\Multidomain\Foundation\Application(
+$app = new Aljawad\Multidomain\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 ```
@@ -51,14 +51,14 @@ Then update also the two application Kernels (HTTP and CLI).
 At the very top of the `Kernel.php` file in the `app\Http` folder, do the following changes:
 
 ```php
-use Gecche\Multidomain\Foundation\Http\Kernel as HttpKernel;
+use Aljawad\Multidomain\Foundation\Http\Kernel as HttpKernel;
 //use Illuminate\Foundation\Http\Kernel as HttpKernel;
 ```
 
 Similarly in the `Kernel.php` file in the `app\Console` folder:
 
 ```php
-use Gecche\Multidomain\Foundation\Console\Kernel as ConsoleKernel;
+use Aljawad\Multidomain\Foundation\Console\Kernel as ConsoleKernel;
 #use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 ```
 
@@ -67,7 +67,7 @@ one in the `$providers` array in the `app.php` file in the `config` folder:
 
 ```php
         //Illuminate\Queue\QueueServiceProvider::class,
-        Gecche\Multidomain\Queue\QueueServiceProvider::class,
+        Aljawad\Multidomain\Queue\QueueServiceProvider::class,
 ```
         
 Lastly you publish the config file.

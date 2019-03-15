@@ -1,6 +1,6 @@
-<?php namespace Gecche\Multidomain\Foundation\Console;
+<?php namespace Aljawad\Multidomain\Foundation\Console;
 
-use Gecche\Multidomain\Console\Application as Artisan;
+use Aljawad\Multidomain\Console\Application as Artisan;
 
 
 class Kernel extends \Illuminate\Foundation\Console\Kernel {
@@ -11,7 +11,7 @@ class Kernel extends \Illuminate\Foundation\Console\Kernel {
 	 * @var array
 	 */
     protected $bootstrappers = [
-        \Gecche\Multidomain\Foundation\Bootstrap\DetectDomain::class,
+        \Aljawad\Multidomain\Foundation\Bootstrap\DetectDomain::class,
         \Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables::class,
         \Illuminate\Foundation\Bootstrap\LoadConfiguration::class,
         \Illuminate\Foundation\Bootstrap\HandleExceptions::class,

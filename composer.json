@@ -1,5 +1,5 @@
 {
-    "name": "gecche/laravel-multidomain",
+    "name": "aljawad/laravel-multidomain",
     "description": "Laravel App on a subdomains, multi-tenancy setting",
     "keywords": ["laravel", "subdomains", "multitenancy", "multi-tenants", "multidomain"],
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Gecche\\Multidomain\\": "src/"
+            "Aljawad\\Multidomain\\": "src/"
         },
         "files": [
             "src/Foundation/helpers.php"
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Gecche\\Multidomain\\Foundation\\DomainConsoleServiceProvider"
+                "Aljawad\\Multidomain\\Foundation\\DomainConsoleServiceProvider"
             ]
         }
     }

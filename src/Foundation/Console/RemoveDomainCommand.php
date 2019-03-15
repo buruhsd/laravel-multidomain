@@ -1,4 +1,4 @@
-<?php namespace Gecche\Multidomain\Foundation\Console;
+<?php namespace Aljawad\Multidomain\Foundation\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Config;
