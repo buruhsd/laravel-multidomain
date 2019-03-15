@@ -104,6 +104,19 @@ class Application extends \Illuminate\Foundation\Application
             return $domainStoragePath;
         return $this->storagePath();
     }
+    
+    /**
+     * Get the path to the configuration cache file.
+     *
+     * @return string
+     */
+    public function getCachedConfigPath()
+    {
+        $envFile = $this->environmentFile();
+        if ($envFile && $envFile == '.env')
+            return $this->bootstrapPath().'/cache/config.php';
+        return $this->bootstrapPath().'/cache/config-'.domain_sanitized($this['domain']).'.php';
+    }
 
 
 }
