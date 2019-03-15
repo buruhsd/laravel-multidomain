@@ -78,6 +78,14 @@ class AddDomainCommand extends GeneratorCommand
 
         $envArray = $this->getVarsArray($envFilePath);
 
+        $a = ["APP_KEY"=>"base64:ZvwY8iCey+hXp19pjAyw8QUvyvKNSG86paqiyS84FF8="];
+
+        $envArray = array_merge($envArray, $a);
+        $envArray['DB_DATABASE'] = $this->domain;
+        // var_dump($this->domain); die();
+
+        // var_dump($b); die();
+
         $domainEnvFilePath = $this->getDomainEnvFilePath();
 
         $domainEnvArray = array_merge($envArray, $domainValues);
