@@ -1,4 +1,4 @@
-<?php namespace Aljawad\Multidomain\Foundation\Console;
+<?php namespace Gecche\Multidomain\Foundation\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Facades\Config;
@@ -22,6 +22,9 @@ class AddDomainCommand extends GeneratorCommand
     protected $description = "Adds a domain to the framework by creating the specific .env file and storage dirs.";
     protected $domain;
 
+    protected $servername;
+    protected $username;
+    protected $password;
     /*
      * Se il file di ambiente esiste già viene semplicemente sovrascirtto con i nuovi valori passati dal comando (update)
      */
@@ -48,6 +51,10 @@ class AddDomainCommand extends GeneratorCommand
         $this->updateConfigFile();
 
         $this->line("<info>Added</info> <comment>" . $this->domain . "</comment> <info>to the application.</info>");
+
+        // $this->servername = $servername;
+        // $this->username = $username;
+        // $this->password = $password;
     }
 
 
@@ -81,10 +88,10 @@ class AddDomainCommand extends GeneratorCommand
         $a = ["APP_KEY"=>"base64:ZvwY8iCey+hXp19pjAyw8QUvyvKNSG86paqiyS84FF8="];
 
         $envArray = array_merge($envArray, $a);
-        $envArray['DB_DATABASE'] = $this->domain;
-        // var_dump($this->domain); die();
-
-        // var_dump($b); die();
+        // var_dump($envArray['DB_HOST']); die();
+        $envArray['DB_DATABASE'] = str_replace('.', '_', $this->domain);
+        
+        $this->createNewDatabase(str_replace('.', '_', $this->domain), $envArray);
 
         $domainEnvFilePath = $this->getDomainEnvFilePath();
 
@@ -143,8 +150,21 @@ class AddDomainCommand extends GeneratorCommand
         return $config;
     }
 
+    public function createNewDatabase($dbname, $dbconn){
+        $conn = new \mysqli($dbconn['DB_HOST'], $dbconn['DB_USERNAME'], $dbconn['DB_PASSWORD']);
 
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        // Create database
+        $sql = "CREATE DATABASE ".$dbname;
+        if ($conn->query($sql) === TRUE) {
+            echo "Database created successfully";
+        } else {
+            echo "Error creating database: " . $conn->error;
+        }
 
-
+        $conn->close();
+    }
 
 }
